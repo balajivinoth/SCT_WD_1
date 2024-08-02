@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Navigation Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('section');
+      const navbar = document.getElementById('navbar');
+
+      const options = {
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.id === 'home') {
+              navbar.className = '';
+              navbar.classList.add('home-nav');
+            } else if (entry.target.id === 'about') {
+              navbar.className = '';
+              navbar.classList.add('about-nav');
+            } else if (entry.target.id === 'services') {
+              navbar.className = '';
+              navbar.classList.add('services-nav');
+            } else if (entry.target.id === 'contact') {
+              navbar.className = '';
+              navbar.classList.add('contact-nav');
+            }
+          }
+        });
+      }, options);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header id="navbar" class="home-nav">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="content">
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Home Section</h2>
+      <p>Welcome to the Home section! This is where you will find the latest updates and news about our website.</p>
+    </section>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Section</h2>
+      <p>Learn more about us here. We are dedicated to providing the best service possible and our team is here to help you with all your needs.</p>
+    </section>
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Services Section</h2>
+      <p>Our services include a wide range of solutions tailored to meet your needs. From consulting to implementation, we cover it all.</p>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Section</h2>
+      <p>Contact us for more information. We are always here to assist you with any queries you may have.</p>
+    </section>
+  </div>
+</body>
+</html>

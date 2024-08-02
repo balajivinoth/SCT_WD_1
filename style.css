@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #f2f2f2;
+  }
+  
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  #navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  #navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  #navbar li {
+    margin: 0 15px;
+  }
+  
+  #navbar a {
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  #navbar a:hover {
+    background-color: #1976d2;
+    color: black; /* Black text color on hover */
+  }
+  
+  section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+  }
+  
+  h2 {
+    margin: 0 0 20px 0;
+    font-size: 2.5em;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+  /* Section-specific navigation styles */
+  .home-nav {
+    background-color: rgba(33, 150, 243, 0.9); /* Semi-transparent blue */
+  }
+  
+  .about-nav {
+    background-color: rgba(76, 175, 80, 0.9); /* Semi-transparent green */
+  }
+  
+  .services-nav {
+    background-color: rgba(255, 193, 7, 0.9); /* Semi-transparent amber */
+  }
+  
+  .contact-nav {
+    background-color: rgba(244, 67, 54, 0.9); /* Semi-transparent red */
+  }
